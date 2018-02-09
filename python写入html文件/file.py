@@ -3,26 +3,26 @@
 import os
 import time
 import random
+import socket
 
 ############需要配置的地方########################
 #网页的title
-HEAD_TITLE = "XX项目测试包"
-
-# ip地址：格式：127.0.0.1
-IP = "127.168.XX.81"
+HEAD_TITLE = "甘肃测试包"
 
 # 放置包的位置 例如：/usr/local/var/www/
 FILE_DIR = "/usr/local/var/www/"
 
 # 跑马灯展示当前的任务
-CURRENT_WORK_LIST = "当前的测试任务：魔窗功能"
+CURRENT_WORK_LIST = "当前的测试任务：滑水"
 
-#每个包修改的东西叙述
 def getArray():
 	return [	
-		"代码合并，修复登录失败的bug",
-		]
+		"iOS包",
+	]
 ###############################################
+
+# ip地址：获取本机的ip
+IP = socket.gethostbyname(socket.gethostname())
 
 def getFileModifyTime(fileName):
 	filePath = "%s%s"%(FILE_DIR, fileName)
@@ -101,6 +101,9 @@ def getHtmlTxt():
 </body>
 </html>
 '''
+
+def getGifUrl():
+	return "gril.gif"
 
 def writeFile(fileNameArray):
 	print(fileNameArray)
